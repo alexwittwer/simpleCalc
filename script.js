@@ -113,11 +113,15 @@ function buttonClick(event) {
       }
       break;
     case "equal":
-      evaluation.num1 = calcValues(
-        evaluation.num1,
-        evaluation.num2,
-        evaluation.operator
-      );
+      if (!evaluation.num2) {
+        break;
+      } else {
+        evaluation.num1 = calcValues(
+          evaluation.num1,
+          evaluation.num2,
+          evaluation.operator
+        );
+      }
       break;
   }
 }
