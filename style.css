@@ -7,9 +7,11 @@ body {
 }
 
 h1 {
-  font-family: Noto Serif, serif;
+  font-family: "Noto Serif", serif;
+  color: white;
   font-size: 72px;
   margin: 0;
+  margin-bottom: 10px;
 }
 
 .mainCalc {
@@ -28,32 +30,44 @@ h1 {
 
 .calcWindow {
   background-color: rgb(129, 196, 212);
-  flex-basis: 95%;
-  height: 16%;
-  text-align: right;
-  font-family: Noto Serif, serif;
+  flex-basis: 20%;
+  height: 15%;
+  font-family: "Noto Serif", serif;
   font-size: 52pt;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.r1,
+.r2,
+.r3,
+.r4,
+.r5 {
+  height: 20%;
+  flex-basis: 80%;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
 }
 
 button {
-  background-color: white;
+  box-sizing: border-box;
   border: none;
   font-size: 24px;
-  font-weight: 900px;
-  box-shadow: 0px 4px 4px rgb(73, 12, 12);
-  cursor: pointer;
-  transition: all 0.2s ease;
+  font-weight: 900;
+  border-style: solid;
+  border-color: white;
+  border-width: 0.1rem;
 }
 
 button:active {
-  background-color: #834f0c;
+  background-color: #525252;
 }
 
 .funcBtn {
   background-color: rgb(67, 185, 93);
   flex: 1;
-  margin: 0;
-  padding: 0;
 }
 
 .numsBtn {
@@ -63,47 +77,6 @@ button:active {
   padding: 0;
 }
 
-.r1 .funcBtn {
-  background-color: rgb(39, 126, 39);
-}
-
-.zero {
+#zero {
   flex-grow: 2;
-}
-
-.r1 {
-  flex-basis: 90%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.r2 {
-  flex-basis: 95%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.r3 {
-  flex-basis: 95%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.r4 {
-  flex-basis: 95%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.r5 {
-  flex-basis: 95%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.r6 {
-  flex-basis: 95%;
-  display: flex;
-  justify-content: space-between;
-  flex: 0;
 }
