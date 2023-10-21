@@ -76,43 +76,44 @@ function buttonClick(event) {
       stringInput = calcValues(evaluation.num1, 0, evaluation.operator);
       break;
     case "mult":
+      evaluation.operator = buttonID;
       if (!evaluation.num1) {
         evaluation.num1 = stringInput;
         stringInput = "";
       } else if (!evaluation.num2) {
-        evaluation.num1 = stringInput;
-        stringInput = "";
-      } else if (evaluation.num2) {
-        evaluation.num1 = calcValues(
-          evaluation.num1,
-          evaluation.num2,
-          evaluation.operator
-        );
-        updateWindow(evaluation);
-      } else {
-        evaluation.operator = buttonID;
-      }
-      break;
-    case "div":
-      if (!evaluation.num1) {
-        evaluation.num1 = stringInput;
-        stringInput = "";
-      } else if (evaluation.num1) {
         evaluation.num2 = stringInput;
-        console.table(evaluation);
+        stringInput = "";
+      } else if (evaluation.num2) {
         evaluation.num1 = calcValues(
           evaluation.num1,
           evaluation.num2,
           evaluation.operator
         );
         updateWindow(evaluation);
-      } else {
-        evaluation.operator = buttonID;
-      }
-      break;
+      } else break;
+    case "div":
+      evaluation.operator = buttonID;
+      if (!evaluation.num1) {
+        evaluation.num1 = stringInput;
+        stringInput = "";
+      } else if (!evaluation.num2) {
+        evaluation.num2 = stringInput;
+        stringInput = "";
+      } else if (evaluation.num2) {
+        evaluation.num1 = calcValues(
+          evaluation.num1,
+          evaluation.num2,
+          evaluation.operator
+        );
+        updateWindow(evaluation);
+      } else break;
     case "sub":
+      evaluation.operator = buttonID;
       if (!evaluation.num1) {
         evaluation.num1 = stringInput;
+        stringInput = "";
+      } else if (!evaluation.num2) {
+        evaluation.num2 = stringInput;
         stringInput = "";
       } else if (evaluation.num2) {
         evaluation.num1 = calcValues(
@@ -121,13 +122,14 @@ function buttonClick(event) {
           evaluation.operator
         );
         updateWindow(evaluation);
-      } else {
-        evaluation.operator = buttonID;
-      }
-      break;
+      } else break;
     case "plus":
+      evaluation.operator = buttonID;
       if (!evaluation.num1) {
         evaluation.num1 = stringInput;
+        stringInput = "";
+      } else if (!evaluation.num2) {
+        evaluation.num2 = stringInput;
         stringInput = "";
       } else if (evaluation.num2) {
         evaluation.num1 = calcValues(
@@ -136,10 +138,7 @@ function buttonClick(event) {
           evaluation.operator
         );
         updateWindow(evaluation);
-      } else {
-        evaluation.operator = buttonID;
-      }
-      break;
+      } else break;
     case "equal":
       evaluation.num1 = calcValues(
         evaluation.num1,
