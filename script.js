@@ -130,6 +130,7 @@ function buttonClick(event) {
       );
       updateWindow(evaluation.num1);
       stringInput = "0";
+      delete evaluation.operator;
       break;
   }
 }
