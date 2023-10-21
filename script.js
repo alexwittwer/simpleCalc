@@ -20,6 +20,7 @@ function calcValues(array) {
 //talk to calcWindow
 const calcWindow = document.querySelector(".calcWindow");
 let stringInput = "";
+let evaluation = {};
 
 function updateWindow(string) {
   calcWindow.textContent = string;
@@ -29,8 +30,6 @@ function updateWindow(string) {
 function buttonClick(event) {
   event.preventDefault();
   const buttonID = event.srcElement.id;
-
-  let evaluation = {};
   calcWindow.textContent = stringInput;
 
   switch (buttonID) {
@@ -57,6 +56,8 @@ function buttonClick(event) {
         evaluation.num1 = stringInput;
         updateWindow(stringInput);
       }
+      console.log(stringInput);
+      console.table(evaluation);
       break;
     case "dec":
       if (stringInput.search(/\./) === -1) {
@@ -84,6 +85,7 @@ function buttonClick(event) {
     case "sub":
     case "plus":
       evaluation.operator = buttonID;
+      console.table(evaluation);
       if (!evaluation.num1) {
         evaluation.num1 = stringInput;
         stringInput = "";
@@ -115,6 +117,8 @@ function calcValues(numa, numb, operator) {
   b = parseFloat(numb);
 
   console.log(operator);
+  console.log(a);
+  console.log(b);
   switch (operator) {
     case "plus":
       return calculate.sum(a, b);
