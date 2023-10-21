@@ -27,6 +27,7 @@ h1 {
   border-color: rgb(66, 66, 66);
   gap: 4px;
   padding: 10px;
+  box-shadow: 7px 6px 0px rgba(0, 0, 0, 0.4);
 }
 
 .calcWindow {
@@ -40,10 +41,11 @@ h1 {
   justify-content: flex-end;
   overflow: hidden;
   border-style: solid;
-  border-width: 2px;
-  border-color: #efbc9c;
-  margin-bottom: 10px;
+  border-width: 4px;
+  border-color: #755b4a;
+  margin-bottom: 20px;
   margin-top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.26) inset 5px 5px 0px 5px;
 }
 
 .r1,
@@ -65,10 +67,12 @@ button {
   border-style: solid;
   border-color: white;
   border-width: 0.1rem;
+  box-shadow: 7px 6px 0px rgba(0, 0, 0, 0.4),
+    inset -4px -4px 0px 9px rgba(0, 0, 0, 0.4);
 }
 
 button:active {
-  background-color: #e0c5b59c;
+  transform: scale(0.93) translate(2px, 2px);
 }
 
 .funcBtn,

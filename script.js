@@ -50,21 +50,16 @@ function buttonClick(event) {
       if (stringInput[0] == "0" && stringInput.search(/\./) === -1) {
         stringInput = event.srcElement.value;
         updateWindow(stringInput);
-        console.table(evaluation);
       } //checks if operator was pressed, if so, begin building 2nd number
       else if (evaluation.operator !== undefined) {
         stringInput += event.srcElement.value;
         evaluation.num2 = stringInput;
         updateWindow(stringInput);
-        console.log("writing num2");
-        console.table(evaluation);
       } //otherwise, start building first number
       else {
         stringInput += event.srcElement.value;
         evaluation.num1 = stringInput;
         updateWindow(stringInput);
-        console.log("writing num1");
-        console.table(evaluation);
       }
       break;
     case "dec":
@@ -98,7 +93,6 @@ function buttonClick(event) {
       //display snarky message for dividing by 0
       if (evaluation.operator === "div" && evaluation.num2 === "0") {
         updateWindow("boom!");
-        console.log("test1");
         break;
       }
       //checks if previous operation was done
@@ -111,12 +105,10 @@ function buttonClick(event) {
         evaluation.operator = buttonID;
         updateWindow(evaluation.num1);
         stringInput = "";
-        console.log("test2");
       }
       evaluation.operator = buttonID;
       stringInput = "";
       updateWindow(evaluation.num1);
-      console.log("test3");
       break;
     case "equal":
       //display snarky message for dividing by 0
