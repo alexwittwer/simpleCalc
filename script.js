@@ -46,17 +46,20 @@ function buttonClick(event) {
     case "seven":
     case "eight":
     case "nine":
+      //checks if there is a decimal for entering numbers between 0 and 1
       if (stringInput[0] == "0" && stringInput.search(/\./) === -1) {
         stringInput = event.srcElement.value;
         updateWindow(stringInput);
         console.table(evaluation);
-      } else if (evaluation.operator !== undefined) {
+      } //checks if operator was pressed, if so, begin building 2nd number
+      else if (evaluation.operator !== undefined) {
         stringInput += event.srcElement.value;
         evaluation.num2 = stringInput;
         updateWindow(stringInput);
         console.log("writing num2");
         console.table(evaluation);
-      } else {
+      } //otherwise, start building first number
+      else {
         stringInput += event.srcElement.value;
         evaluation.num1 = stringInput;
         updateWindow(stringInput);
@@ -65,6 +68,7 @@ function buttonClick(event) {
       }
       break;
     case "dec":
+      //we keep it at string input here to avoid unintended bugs
       if (stringInput.search(/\./) === -1) {
         stringInput += ".";
         updateWindow(stringInput);
@@ -73,6 +77,7 @@ function buttonClick(event) {
       }
       break;
     case "C":
+      //program gives funny behaviour if you change stringInput to 0 after clearing
       evaluation = {};
       stringInput = "";
       evaluation.num1 = stringInput;
@@ -133,7 +138,8 @@ function calcValues(numa, numb, operator) {
   //checks for empty strings
   if (numa === "") {
     numa = 0;
-  } else if (numb === "") {
+  }
+  if (numb === "") {
     numb = 0;
   }
   a = parseFloat(numa);
