@@ -17,7 +17,7 @@ h1 {
 .mainCalc {
   box-sizing: border-box;
   height: 70vh;
-  width: 400px;
+  width: 440px;
   background-color: #ea572a;
   flex-direction: column;
   display: flex;
@@ -26,8 +26,9 @@ h1 {
   border-width: 4px;
   border-color: rgb(66, 66, 66);
   gap: 4px;
-  padding: 10px;
-  box-shadow: 7px 6px 0px rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.4),
+    inset 0px 0px 0px 10px rgba(0, 0, 0, 0.178);
 }
 
 .calcWindow {
@@ -53,11 +54,12 @@ h1 {
 .r3,
 .r4,
 .r5 {
+  box-sizing: border-box;
   height: 20%;
   flex-basis: 80%;
   display: flex;
   justify-content: space-between;
-  gap: 5px;
+  gap: 8px;
 }
 
 button {
@@ -72,7 +74,7 @@ button {
 }
 
 button:active {
-  transform: scale(0.93) translate(2px, 2px);
+  transform: scale(0.95) translate(3px, 1px);
 }
 
 .funcBtn,
