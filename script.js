@@ -50,7 +50,7 @@ function buttonClick(event) {
         stringInput = event.srcElement.value;
         evaluation.num1 = stringInput;
         updateWindow(stringInput);
-      } else if (evaluation.operator) {
+      } else if (evaluation.operator !== undefined) {
         stringInput += event.srcElement.value;
         evaluation.num2 = stringInput;
         updateWindow(stringInput);
@@ -93,7 +93,7 @@ function buttonClick(event) {
         break;
       }
       //checks if previous operation was done
-      if (evaluation.num2 && evaluation.num1) {
+      if (evaluation.num2 !== undefined && evaluation.num1 !== undefined) {
         evaluation.num1 = calcValues(
           evaluation.num1,
           evaluation.num2,
