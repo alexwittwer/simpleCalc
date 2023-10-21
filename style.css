@@ -30,13 +30,13 @@ h1 {
 
 .calcWindow {
   background-color: rgb(129, 196, 212);
-  flex-basis: 20%;
-  height: 15%;
   font-family: "Noto Serif", serif;
   font-size: 52pt;
   display: flex;
+  flex-basis: 500px;
   align-items: center;
   justify-content: flex-end;
+  overflow: hidden;
 }
 
 .r1,
