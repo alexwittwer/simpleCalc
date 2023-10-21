@@ -3,7 +3,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #f7e1c6;
+  background-color: #efbc9c;
 }
 
 h1 {
@@ -18,19 +18,19 @@ h1 {
   box-sizing: border-box;
   height: 70vh;
   width: 480px;
-  background-color: #efbc9c;
+  background-color: #ea572a;
   flex-direction: column;
   display: flex;
   justify-content: space-between;
   border-style: solid;
-  border-width: 1px;
-  border-color: #efbc9c;
+  border-width: 4px;
+  border-color: #000000;
   gap: 4px;
   padding: 10px;
 }
 
 .calcWindow {
-  background-color: #ea572a;
+  background-color: #f7e1c6;
   font-family: "Noto Serif", serif;
   font-size: 52pt;
   display: flex;
@@ -41,6 +41,7 @@ h1 {
   border-style: solid;
   border-width: 2px;
   border-color: #efbc9c;
+  margin-bottom: 10px;
 }
 
 .r1,
@@ -76,7 +77,7 @@ button:active {
 }
 
 .funcBtn {
-  background-color: #0b3f30;
+  background-color: #136d53;
   flex: 1;
   margin: 0;
   padding: 0;
@@ -87,5 +88,5 @@ button:active {
 }
 
 #zero {
-  flex-grow: 2.05;
+  flex-grow: 2.07;
 }
