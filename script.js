@@ -74,11 +74,11 @@ function buttonClick(event) {
       break;
     case "C":
       evaluation = {};
-      stringInput = "0";
+      stringInput = "";
       evaluation.num1 = stringInput;
       delete evaluation.num2;
       delete evaluation.operator;
-      updateWindow(stringInput);
+      updateWindow("0");
       break;
     case "sign":
     case "pct":
