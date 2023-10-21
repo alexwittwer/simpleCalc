@@ -33,6 +33,10 @@ function buttonClick(event) {
   calcWindow.textContent = stringInput;
 
   switch (buttonID) {
+    /*handles numeric input. should 
+    *accumulate numbers until an operator is pushed
+
+    */
     case "zero":
     case "one":
     case "two":
@@ -85,7 +89,7 @@ function buttonClick(event) {
     case "sub":
     case "plus":
       evaluation.operator = buttonID;
-      console.table(evaluation);
+      /*       console.table(evaluation);
       if (!evaluation.num1) {
         evaluation.num1 = stringInput;
         stringInput = "0";
@@ -94,9 +98,10 @@ function buttonClick(event) {
           evaluation.num1,
           evaluation.num2,
           evaluation.operator
-        );
-        updateWindow(evaluation.num1);
-      } else break;
+        ); */
+      stringInput = "";
+      updateWindow(evaluation.num1);
+      /*       } else  */ break;
     case "equal":
       evaluation.num1 = calcValues(
         evaluation.num1,
@@ -104,6 +109,7 @@ function buttonClick(event) {
         evaluation.operator
       );
       updateWindow(evaluation.num1);
+      stringInput = "0";
 
       break;
   }
