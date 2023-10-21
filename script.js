@@ -88,11 +88,8 @@ function buttonClick(event) {
       console.table(evaluation);
       if (!evaluation.num1) {
         evaluation.num1 = stringInput;
-        stringInput = "";
-      } else if (!evaluation.num2) {
-        evaluation.num2 = stringInput;
-        stringInput = "";
-      } else if (evaluation.num2) {
+        stringInput = "0";
+      } else if (evaluation.num2 && evaluation.num1) {
         evaluation.num1 = calcValues(
           evaluation.num1,
           evaluation.num2,
