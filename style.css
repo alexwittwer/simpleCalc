@@ -9,15 +9,15 @@ body {
 h1 {
   font-family: "Noto Serif", serif;
   color: #0b3f30;
-  font-size: 72px;
+  font-size: 60px;
   margin: 0;
   margin-bottom: 10px;
 }
 
 .mainCalc {
   box-sizing: border-box;
-  height: 70vh;
-  width: 480px;
+  height: 60vh;
+  width: 400px;
   background-color: #ea572a;
   flex-direction: column;
   display: flex;
@@ -32,9 +32,10 @@ h1 {
 .calcWindow {
   background-color: #f7e1c6;
   font-family: "Noto Serif", serif;
-  font-size: 52pt;
+  font-size: 32px;
+  padding: 8px;
   display: flex;
-  flex-basis: 500px;
+  flex-basis: 300px;
   align-items: center;
   justify-content: flex-end;
   overflow: hidden;
@@ -42,6 +43,7 @@ h1 {
   border-width: 2px;
   border-color: #efbc9c;
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .r1,
@@ -66,7 +68,7 @@ button {
 }
 
 button:active {
-  background-color: #efbc9c;
+  background-color: #e0c5b59c;
 }
 
 .funcBtn,
