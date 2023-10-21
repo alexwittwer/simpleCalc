@@ -122,6 +122,12 @@ function calcValues(numa, numb, operator) {
   console.log(operator);
   console.log(a);
   console.log(b);
+
+  //prevents premature equal sign
+  if (!operator) {
+    return a;
+  }
+  //operation logic
   switch (operator) {
     case "plus":
       return calculate.sum(a, b);
