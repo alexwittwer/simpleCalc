@@ -82,26 +82,27 @@ function buttonClick(event) {
       break;
     case "sign":
     case "pct":
-      stringInput = calcValues(evaluation.num1, 0, evaluation.operator);
+      stringInput = calcValues(evaluation.num1, 0, buttonID);
+      //clear operator and num2
+      evaluation.num2 = "";
+      evaluation.operator = "";
+      updateWindow(stringInput);
       break;
     case "mult":
     case "div":
     case "sub":
-    case "plus":
-      evaluation.operator = buttonID;
-      /*       console.table(evaluation);
-      if (!evaluation.num1) {
-        evaluation.num1 = stringInput;
-        stringInput = "0";
-      } else if (evaluation.num2 && evaluation.num1) {
+    case "plus" /* 
+      if (evaluation.num2 && evaluation.num1) {
         evaluation.num1 = calcValues(
           evaluation.num1,
           evaluation.num2,
           evaluation.operator
-        ); */
+        );
+      } */:
+      evaluation.operator = buttonID;
       stringInput = "";
       updateWindow(evaluation.num1);
-      /*       } else  */ break;
+      break;
     case "equal":
       evaluation.num1 = calcValues(
         evaluation.num1,
@@ -110,7 +111,6 @@ function buttonClick(event) {
       );
       updateWindow(evaluation.num1);
       stringInput = "0";
-
       break;
   }
 }
