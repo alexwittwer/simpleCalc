@@ -1,7 +1,7 @@
 body {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   flex-direction: column;
   background-color: #efbc9c;
 }
@@ -10,13 +10,13 @@ h1 {
   font-family: "Noto Serif", serif;
   color: #0b3f30;
   font-size: 60px;
-  margin: 0;
-  margin-bottom: 10px;
+  margin: 0px;
+  margin-bottom: 5px;
 }
 
 .mainCalc {
   box-sizing: border-box;
-  height: 70vh;
+  height: 650px;
   width: 440px;
   background-color: #ea572a;
   flex-direction: column;
@@ -35,9 +35,10 @@ h1 {
   background-color: #f7e1c6;
   font-family: "Noto Serif", serif;
   font-size: 32px;
+  height: 40px;
   padding: 8px;
   display: flex;
-  flex-basis: 300px;
+  flex-shrink: 0;
   align-items: center;
   justify-content: flex-end;
   overflow: hidden;
@@ -60,21 +61,26 @@ h1 {
   display: flex;
   justify-content: space-between;
   gap: 8px;
+  margin-bottom: 5px;
 }
 
 button {
   border: none;
   font-size: 24px;
-  font-weight: 900;
+  font-weight: 700;
+  font-family: "Noto Serif", serif;
   border-style: solid;
   border-color: white;
   border-width: 0.1rem;
-  box-shadow: 7px 6px 0px rgba(0, 0, 0, 0.4),
+  box-shadow: 6px 5px 0px rgba(0, 0, 0, 0.4),
     inset -4px -4px 0px 9px rgba(0, 0, 0, 0.4);
+  transition: all 0.1s ease;
 }
 
 button:active {
   transform: scale(0.95) translate(3px, 1px);
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.4),
+    inset -4px -4px 0px 9px rgba(0, 0, 0, 0.4);
 }
 
 .funcBtn,
@@ -96,5 +102,26 @@ button:active {
 }
 
 #zero {
-  flex-grow: 2.07;
+  flex-grow: 2.18;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+  width: 400px;
+}
+
+a {
+  display: block;
+  outline: none;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  height: 40px;
+  width: 40px;
+  margin: 10px;
 }
