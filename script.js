@@ -48,22 +48,25 @@ function buttonClick(event) {
     case "nine":
       if (stringInput[0] == "0" && stringInput.search(/\./) === -1) {
         stringInput = event.srcElement.value;
-        evaluation.num1 = stringInput;
         updateWindow(stringInput);
+        console.table(evaluation);
       } else if (evaluation.operator !== undefined) {
         stringInput += event.srcElement.value;
         evaluation.num2 = stringInput;
         updateWindow(stringInput);
+        console.log("writing num2");
+        console.table(evaluation);
       } else {
         stringInput += event.srcElement.value;
         evaluation.num1 = stringInput;
         updateWindow(stringInput);
+        console.log("writing num1");
+        console.table(evaluation);
       }
       break;
     case "dec":
       if (stringInput.search(/\./) === -1) {
         stringInput += ".";
-        evaluation.num1 = stringInput;
         updateWindow(stringInput);
       } else {
         return;
@@ -73,8 +76,8 @@ function buttonClick(event) {
       evaluation = {};
       stringInput = "0";
       evaluation.num1 = stringInput;
-      evaluation.num2 = "";
-      evaluation.operator = "";
+      delete evaluation.num2;
+      delete evaluation.operator;
       updateWindow(stringInput);
       break;
     case "sign":
@@ -90,6 +93,7 @@ function buttonClick(event) {
       //display snarky message for dividing by 0
       if (evaluation.operator === "div" && evaluation.num2 === "0") {
         updateWindow("boom!");
+        console.log("test1");
         break;
       }
       //checks if previous operation was done
@@ -100,11 +104,13 @@ function buttonClick(event) {
           evaluation.operator
         );
         updateWindow(evaluation.num1);
-        stringInput = "0";
+        stringInput = "";
+        console.log("test2");
       }
       evaluation.operator = buttonID;
       stringInput = "";
       updateWindow(evaluation.num1);
+      console.log("test3");
       break;
     case "equal":
       //display snarky message for dividing by 0
