@@ -33,10 +33,9 @@ function buttonClick(event) {
   calcWindow.textContent = stringInput;
 
   switch (buttonID) {
-    /*handles numeric input. should 
-    *accumulate numbers until an operator is pushed
-
-    */
+    /*handles numeric input. should
+     *accumulate numbers until an operator is pushed
+     */
     case "zero":
     case "one":
     case "two":
@@ -60,8 +59,6 @@ function buttonClick(event) {
         evaluation.num1 = stringInput;
         updateWindow(stringInput);
       }
-      console.log(stringInput);
-      console.table(evaluation);
       break;
     case "dec":
       if (stringInput.search(/\./) === -1) {
@@ -82,30 +79,39 @@ function buttonClick(event) {
       break;
     case "sign":
     case "pct":
-      //prematurely using pct or sign allows you to add prevailing 0's
-      //displays NaN if no value
-      stringInput = calcValues(stringInput, 0, buttonID);
+      evaluation.num1 = calcValues(evaluation.num1, 0, buttonID);
       //clear operator and num2
-      evaluation.num2 = "";
-      evaluation.operator = "";
-      updateWindow(stringInput);
+      updateWindow(evaluation.num1);
       break;
     case "mult":
     case "div":
     case "sub":
-    case "plus" /* 
+    case "plus":
+      //display snarky message for dividing by 0
+      if (evaluation.operator === "div" && evaluation.num2 === "0") {
+        updateWindow("boom!");
+        break;
+      }
+      //checks if previous operation was done
       if (evaluation.num2 && evaluation.num1) {
         evaluation.num1 = calcValues(
           evaluation.num1,
           evaluation.num2,
           evaluation.operator
         );
-      } */:
+        updateWindow(evaluation.num1);
+        stringInput = "0";
+      }
       evaluation.operator = buttonID;
       stringInput = "";
       updateWindow(evaluation.num1);
       break;
     case "equal":
+      //display snarky message for dividing by 0
+      if (evaluation.operator === "div" && evaluation.num2 === "0") {
+        updateWindow("boom!");
+        break;
+      }
       evaluation.num1 = calcValues(
         evaluation.num1,
         evaluation.num2,
@@ -126,10 +132,6 @@ function calcValues(numa, numb, operator) {
   }
   a = parseFloat(numa);
   b = parseFloat(numb);
-
-  console.log(operator);
-  console.log(a);
-  console.log(b);
 
   //prevents premature equal sign
   if (!operator) {
