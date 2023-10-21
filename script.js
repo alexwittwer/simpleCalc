@@ -17,14 +17,21 @@ function calcValues(array) {
   return;
 }
 
+//talk to calcWindow
+const calcWindow = document.querySelector(".calcWindow");
+let stringInput = "";
+
+function updateWindow(object_name) {
+  calcWindow.textContent = object_name.num1;
+}
+
 //gets the ID of the button clicked;
 function buttonClick(event) {
   event.preventDefault();
   const buttonID = event.srcElement.id;
 
-  const evaluation = {};
-
-  let stringInput = "";
+  let evaluation = {};
+  calcWindow.textContent = stringInput;
 
   switch (buttonID) {
     case "zero":
@@ -38,17 +45,20 @@ function buttonClick(event) {
     case "eight":
     case "nine":
       stringInput += event.srcElement.value;
+      evaluation.num1 = stringInput;
+      updateWindow(evaluation);
       break;
     case "dec":
       if (stringInput.search(".") === -1) {
         stringInput += ".";
+        updateWindow(evaluation);
       } else {
         return;
       }
       break;
     case "C":
       evaluation = {};
-      stringInput = "";
+      stringInput = "0";
       break;
     case "sign":
       stringInput = calcValues(evaluation.num1, 0, evaluation.operator);
@@ -66,6 +76,7 @@ function buttonClick(event) {
           evaluation.num2,
           evaluation.operator
         );
+        updateWindow(evaluation);
       } else {
         evaluation.operator = buttonID;
       }
@@ -80,6 +91,7 @@ function buttonClick(event) {
           evaluation.num2,
           evaluation.operator
         );
+        updateWindow(evaluation);
       } else {
         evaluation.operator = buttonID;
       }
@@ -94,6 +106,8 @@ function buttonClick(event) {
           evaluation.num2,
           evaluation.operator
         );
+
+        updateWindow(evaluation);
       } else {
         evaluation.operator = buttonID;
       }
@@ -108,6 +122,8 @@ function buttonClick(event) {
           evaluation.num2,
           evaluation.operator
         );
+
+        updateWindow(evaluation);
       } else {
         evaluation.operator = buttonID;
       }
@@ -122,6 +138,7 @@ function buttonClick(event) {
           evaluation.operator
         );
       }
+      updateWindow(evaluation);
       break;
   }
 }
