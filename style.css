@@ -1,7 +1,7 @@
 body {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   flex-direction: column;
   background-color: #efbc9c;
 }
@@ -109,8 +109,9 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 30px;
+  margin-top: 30px;
   width: 400px;
+  font-family: "Noto Serif", serif;
 }
 
 a {
