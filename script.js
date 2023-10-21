@@ -47,7 +47,7 @@ function buttonClick(event) {
     case "seven":
     case "eight":
     case "nine":
-      if (stringInput[0] == "0") {
+      if (stringInput[0] == "0" && stringInput.search(/\./) === -1) {
         stringInput = event.srcElement.value;
         evaluation.num1 = stringInput;
         updateWindow(stringInput);
