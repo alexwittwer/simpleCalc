@@ -103,12 +103,12 @@ function buttonClick(event) {
       }
       //checks if previous operation was done
       if (evaluation.num2 !== undefined && evaluation.num1 !== undefined) {
-        evaluation.operator = buttonID;
         evaluation.num1 = calcValues(
           evaluation.num1,
           evaluation.num2,
           evaluation.operator
         );
+        evaluation.operator = buttonID;
         updateWindow(evaluation.num1);
         stringInput = "";
         console.log("test2");
