@@ -82,7 +82,9 @@ function buttonClick(event) {
       break;
     case "sign":
     case "pct":
-      stringInput = calcValues(evaluation.num1, 0, buttonID);
+      //prematurely using pct or sign allows you to add prevailing 0's
+      //displays NaN if no value
+      stringInput = calcValues(stringInput, 0, buttonID);
       //clear operator and num2
       evaluation.num2 = "";
       evaluation.operator = "";
@@ -116,6 +118,12 @@ function buttonClick(event) {
 }
 
 function calcValues(numa, numb, operator) {
+  //checks for empty strings
+  if (numa === "") {
+    numa = 0;
+  } else if (numb === "") {
+    numb = 0;
+  }
   a = parseFloat(numa);
   b = parseFloat(numb);
 
