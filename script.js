@@ -124,8 +124,17 @@ function buttonClick(event) {
       updateWindow(evaluation.num1);
       stringInput = "0";
       delete evaluation.operator;
+      delete evaluation.num2;
       break;
   }
+}
+
+function clearCalc() {
+  evaluation = {};
+  stringInput = "";
+  evaluation.num1 = stringInput;
+  delete evaluation.num2;
+  delete evaluation.operator;
 }
 
 function calcValues(numa, numb, operator) {
